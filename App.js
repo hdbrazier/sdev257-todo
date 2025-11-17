@@ -1,5 +1,5 @@
 import React, {use, useState} from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Keyboard } from 'react-native';
 import Task from './components/Tasks';
 import { KeyboardAvoidingView } from 'react-native-web';
 
@@ -45,7 +45,7 @@ export default function App() {
 
       {/* Write a task*/}
       <KeyboardAvoidingView
-        behavior={Platform.OS === "ios"? "padding" : "height"}
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.writeTaskWrapper}
       >
         <TextInput style={styles.input} placeholder={'Write a task'} value={task} onChangeText={text => setTask(text)} />
