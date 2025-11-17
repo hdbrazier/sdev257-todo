@@ -1,7 +1,7 @@
 import React, {use, useState} from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Keyboard } from 'react-native';
 import Task from './components/Tasks';
-import { KeyboardAvoidingView } from 'react-native-web';
+
 
 export default function App() {
   const [task, setTask] = useState();
@@ -10,7 +10,7 @@ export default function App() {
   const handleAddTask = () => {
     Keyboard.dismiss();
     setTaskItems([...taskItems, task])
-    setTask(null);
+    setTask('');
   }
 
   const completeTask = (index) => {
